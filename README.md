@@ -40,7 +40,7 @@ $ ./reset.sh
 ## Example
 
 ```
-$ ./fat-new.py DIR850LB1_FW210WWb03.bin 
+$ ./fat.py DIR850LB1_FW210WWb03.bin 
 
                                __           _   
                               / _|         | |  
