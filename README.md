@@ -24,7 +24,7 @@ This is a (minor) rewrite of original repo available at https://github.com/attif
     firmadyne_pass = "firmadyne"
     ```
     
-## Usage ?
+## Usage 
 
 Provide the firmware filename as an argument to the script. If not provided, the script would prompt for it at runtime.
 
