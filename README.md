@@ -14,7 +14,7 @@ This is a (minor) rewrite of original repo available at https://github.com/attif
 
 3. Copy over `fat.py` and `reset.sh` to the directory where you installed firmadyne
 
-4. Edit `fat.py` and adjust the paths to firmadyne and binwalk. Additionally, provide the root password as well. Firmadyne requires root privileges for some of its operations. The root password is provided in the script itself to automate the process.
+4. Edit `fat.py` and `reset.py` to adjust the paths to firmadyne and binwalk. Additionally, provide the root password as well. Firmadyne requires root privileges for some of its operations. The root password is provided in the script itself to automate the process.
 
     ```python
     # Configurations - change this according to your system
@@ -35,7 +35,7 @@ $ ./fat.py <firmware binary>
 To remove all analyzed firmware images, run
 
 ```
-$ ./reset.sh
+$ ./reset.py
 ```
 ## Example
 
