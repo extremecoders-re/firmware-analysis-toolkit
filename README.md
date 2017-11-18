@@ -2,7 +2,13 @@
 
 FAT is a toolkit built in order to help security researchers analyze and identify vulnerabilities in IoT and embedded device firmware. This is built in order to use for the "*[Offensive IoT Exploitation](http://offensiveiotexploitation.com/)*" training conducted by [Attify](https://attify.com). 
 
-This is a (minor) rewrite of original repo available at https://github.com/attify/firmware-analysis-toolkit.
+This is a rewrite of original repo available at https://github.com/attify/firmware-analysis-toolkit.
+
+
+## What's changed ?
+
+The original scripts - `fat.py` & `reset.sh`  required the user to enter the root and database password during running. This updated script automates the process and thus does not require any manual intervention.
+
 
 ## Installation instructions
 
@@ -23,7 +29,8 @@ This is a (minor) rewrite of original repo available at https://github.com/attif
     root_pass = "root"
     firmadyne_pass = "firmadyne"
     ```
-    
+
+
 ## Usage 
 
 Provide the firmware filename as an argument to the script. If not provided, the script would prompt for it at runtime.
@@ -37,6 +44,8 @@ To remove all analyzed firmware images, run
 ```
 $ ./reset.py
 ```
+
+
 ## Example
 
 ```
