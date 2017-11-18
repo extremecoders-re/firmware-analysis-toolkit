@@ -45,13 +45,13 @@ def run_extractor(firm_name, firm_brand):
     print "[+] Firmware : " + firm_name
     print "[+] Brand : " + firm_brand
     extractor_cmd = firmadyne_path + "/sources/extractor/extractor.py -b " + firm_brand + " -sql 127.0.0.1 -np -nk " + "\""+ firm_name + "\"" + " images "
-    child = pexpect.spawn(extractor_cmd)
+    child = pexpect.spawn(extractor_cmd, timeout=None)
     child.expect("Database Image ID: ")
     image_id = child.readline().strip()
     print "[+] Database image ID : " + image_id
     child.expect(pexpect.EOF)
     return image_id
-    
+
 
 def identify_arch(image_id):
     print "[+] Identifying architecture"
@@ -64,7 +64,7 @@ def identify_arch(image_id):
     child.sendline(firmadyne_pass)
     child.expect(pexpect.EOF)
     return arch
-    
+
 
 def tar2db(image_id):
     print "[+] Storing filesystem in database"
@@ -88,7 +88,7 @@ def setup_network(arch, image_id):
     network_cmd = "sudo " + firmadyne_path + "/scripts/inferNetwork.sh " + image_id + " " + arch
     child = pexpect.spawn(network_cmd)
     child.sendline(root_pass)
-    child.expect("Interfaces:", timeout=120)
+    child.expect("Interfaces:", timeout=None)
     interfaces = child.readline().strip()
     print "[+] Network interfaces : " + interfaces
     child.expect(pexpect.EOF)
